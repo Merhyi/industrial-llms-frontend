@@ -1,13 +1,14 @@
 <template>
     <v-card class="fill-height">
-        <Sidebar selectedPage="knowbase"/>
-        <KnowBaseFrame />
+        <Sidebar />
+        <ChatFrame />
     </v-card>
 </template>
 
 
 
 <script setup>
+
 
 
 </script>

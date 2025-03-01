@@ -16,7 +16,7 @@
 
 ```
 cd vue_frontend
-npm run install
+npm install
 ```
 
 确保模块安装完成以后，可使用 npm 将前端映射至端口上

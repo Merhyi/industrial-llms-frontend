@@ -12,9 +12,12 @@
 
 `git clone https://github.com/Merhyi/industrial-llms-frontend.git`
 
-在部署前端服务之前，请确保系统上已经安装了 Node.js 环境。使用其配套的 npm 包管理服务安装前端所需的模块
+在部署前端服务之前，请确保系统上已经安装了 Node.js 环境。进入 vue_frontend 文件夹，并使用其配套的 npm 包管理服务安装前端所需的模块
 
-`npm run install`
+```
+cd vue_frontend
+npm run install
+```
 
 确保模块安装完成以后，可使用 npm 将前端映射至端口上
 

@@ -10,11 +10,13 @@
 
 使用 git clone 命令将前端服务拉取到当前目录下
 
-`git clone https://github.com/Merhyi/industrial-llms-frontend.git`
+```Shell
+git clone https://github.com/Merhyi/industrial-llms-frontend.git
+```
 
 在部署前端服务之前，请确保系统上已经安装了 Node.js 环境。进入 vue_frontend 文件夹，并使用其配套的 npm 包管理服务安装前端所需的模块
 
-```
+```Shell
 cd vue_frontend
 npm install
 ```
@@ -32,7 +34,7 @@ npm install
 开发时，仅需要编写 xxxFrame.vue 的内容，在 xxxPage.vue 的 \<templates\> 中加入 \<xxxFrame /\>  和 \<Sidebar /\> 组件即可。
 
 
-```
+```HTML
 <template>
     <v-card class="fill-height">
         <Sidebar />
@@ -49,7 +51,7 @@ npm install
 
 以部署 ChatPage.vue 组件为例，指定路由后，若前端映射的端口为 3000，则可通过 http://localhost:3000/chat 访问。
 
-```
+```JavaScript
 // ...
 // 从 components 文件夹中引入对应的 Page 组件
 import ChatPage from "@/components/ChatPage.vue"

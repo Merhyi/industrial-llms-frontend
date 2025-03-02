@@ -29,6 +29,8 @@ npm install
 
 ## Development
 
+**注意**：开发者通过上传更新文件时，若涉及到包管理文件 package.json、主脚本文件 main.js、主页面组件 app.vue，以及路由配置文件 index.js 等全局配置文件时，一定要比较仓库中源文件内容和待上传文件内容，以免覆盖造成数据丢失！
+
 前端页面使用的组件中，页面 xxxPage.vue 主要由帧 xxxFrame.vue 和侧边栏 Sidebar.vue 两个组件构成，xxxPage 将被挂载于路由上以供访问。
 
 开发时，仅需要编写 xxxFrame.vue 的内容，在 xxxPage.vue 的 \<templates\> 中加入 \<xxxFrame /\>  和 \<Sidebar /\> 组件即可。
@@ -69,6 +71,5 @@ const routes = [
 ]
 ```
 
-*注意*：开发者通过上传更新文件时，若涉及到包管理文件 package.json、主脚本文件 main.js、主页面组件 app.vue，以及路由配置文件 index.js 等全局配置文件时，一定要比较仓库中源文件内容和待上传文件内容，以免覆盖造成数据丢失！
 
 

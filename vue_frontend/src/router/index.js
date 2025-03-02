@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router"
-import HomePage from "@/components/HomePage.vue"
-import ChatPage from "@/components/ChatPage.vue"
+import HomePage from "@/components/HomePage (Discarded)/HomePage.vue"
+import ChatPage from "@/components/ChatPage/ChatPage.vue"
+import KnowBase from "@/components/KnowbasePage/KnowBasePage.vue"
 
 
 const routes = [
@@ -14,7 +15,13 @@ const routes = [
         path: "/chat",
         name: "ChatPage", 
         component: ChatPage,
-    }
+    },
+
+    {
+        path: "/knowbase",
+        name: "KnowBase", 
+        component: KnowBase,
+    },
 
 ]
 

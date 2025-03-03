@@ -2,7 +2,7 @@ import { createWebHistory, createRouter } from "vue-router"
 import HomePage from "@/components/HomePage (Discarded)/HomePage.vue"
 import ChatPage from "@/components/ChatPage/ChatPage.vue"
 import KnowBase from "@/components/KnowbasePage/KnowBasePage.vue"
-
+import KnowBaseConfigurationPage from "@/components/KnowbasePage/KnowBaseConfigurationPage.vue"
 
 const routes = [
     {
@@ -22,6 +22,18 @@ const routes = [
         name: "KnowBase", 
         component: KnowBase,
     },
+
+    {
+        path: "/knowbase/configuration",
+        name: "Knowbase Configuration",
+        component: KnowBaseConfigurationPage,
+    },
+
+    {
+        path:"/knowbase/configuration/edititem",
+        name: "Knowbase Dataitem Configuration", 
+        component: null
+    }
 
 ]
 

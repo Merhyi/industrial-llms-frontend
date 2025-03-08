@@ -50,6 +50,7 @@
                                         @click="returnRootPage"
                                         width="30px"
                                         variant="plain"
+                                        :ripple="false"
                                     >
                                         root
                                     </v-card>
@@ -99,7 +100,7 @@
                     </v-col>
                     <v-col cols="3">
                         <v-sheet
-                            class="font-weight-medium"
+                            class="font-weight-regular"
                         >
                             <h2>Documents</h2>
                         </v-sheet>
@@ -121,7 +122,7 @@
                     <v-col cols="1" style="margin-right:10px">
                         <v-btn
                             color="#5865f2"
-                            
+                            @click="revealCreateItemPage"
                             prepend-icon="mdi-file-import"
                             
                             minWidth="120px"
@@ -159,25 +160,40 @@
                     style="background-color: #F5F5F5"
                 >
 
+                    <template v-slot:item.state="{ value }">
+                        <v-chip :color="getStateChipColor(value)">
+                            {{ value }}
+                        </v-chip>
+                    </template>
+
                     <template v-slot:item.actions="{ item }">
-                        <v-btn
-                            class="me-2"
-                            size="small"
-                            variant="text"
-                            @click="editItem(item)"
-                            icon="mdi-pencil"
-                            style="margin-left: -15px"
-                        >
-                        </v-btn>
-                        <v-btn
-                            class="me-2"
-                            size="small"
-                            variant="text"
-                            color="#F44336"
-                            @click="deleteItem(item)"
-                            icon="mdi-delete"
-                        >
-                        </v-btn>
+                        <v-container>
+                            <v-row>
+                                <v-col cols="2">
+                                    <v-switch
+                                        :model-value="item.active"
+                                        color="primary"
+                                        hide-details
+                                        style="margin-left: -30px"
+                                    >
+                                    </v-switch>
+                                </v-col>
+
+                                <v-col>
+                                    <v-btn
+                                        class="mt-3"
+                                        size="30"
+                                        variant="text"
+                                        color="#F44336"
+                                        @click="deleteItem(item)"
+                                        icon="mdi-delete"
+                                        style="margin-left: -15px"
+                                    >
+                                    </v-btn>
+                                </v-col>
+
+                            </v-row>
+                        </v-container>
                     </template>
 
                 </v-data-table>
@@ -211,15 +227,23 @@ const headers = [
 ]
 
 const items = [
-    {name: 'Genshin Impact', size: '666.6GB', udtime: '2077-2-31', state: 'Active', itemid: "genshin_impact"}, 
-    {name: 'Honkai: Star Rail', size: '777.7GB', udtime: '2077-2-31', state: 'Active', itemid: "honkai_star_rail"},
-    {name: 'Zenless Zone Zero', size: '999.9GB', udtime: '2077-2-31', state: 'Active', itemid: "zenless_zone_zero"}
+    {name: 'Genshin Impact', size: '666.6GB', udtime: '2077-2-31', state: 'Error', itemid: "genshin_impact", active: false}, 
+    {name: 'Honkai: Star Rail', size: '777.7GB', udtime: '2077-2-31', state: 'Ready', itemid: "honkai_star_rail", active: false},
+    {name: 'Zenless Zone Zero', size: '999.9GB', udtime: '2077-2-31', state: 'Ready', itemid: "zenless_zone_zero", active: false}
 ]
 
-function onRowClick()
+function getStateChipColor(state)
 {
-    console.log("Click")
+    if (state == 'Ready')
+    {
+        return 'green'
+    }
+    else if (state == "Error")
+    {
+        return 'red'
+    }
 }
+
 
 const closeOverlayHandler = () => {
   overlay.value = false
@@ -231,11 +255,13 @@ function returnRootPage()
     router.push("/knowbase")
 }
 
+function revealCreateItemPage()
+{
+    router.push(`/knowbase/configuration/create_item/?baseid=${route.query.baseid}`)
+}
 
-const editItem = (item) => {
-  alert(`Editing ${item.itemid}`);
-  router.push(`${route.fullPath}/edititem/?itemid=${item.itemid}`)
-};
+
+
 
 
 const deleteItem = (item) => {

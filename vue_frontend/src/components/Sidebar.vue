@@ -3,6 +3,7 @@
         <v-navigation-drawer
             expand-on-hover
             rail
+            color="#FAFAFA"
         >
             <v-list nav id="sidebar" v-model:selected="currentPage">
                 <v-list-item
@@ -17,7 +18,7 @@
   
                 <v-list-item ref="refChatTab" prepend-icon="mdi-message-text" title="Chat Service" value="chat" color="primary" @click="revealChatPage"></v-list-item>
                 <v-list-item ref="refKnowbaseTab" prepend-icon="mdi-database" title="Knowledge Base" value="knowbase" color="primary" @click="revealKnowbasePage"></v-list-item>
-                <v-list-item ref="refAgentTab" prepend-icon="mdi-robot" title="Available Agents" value="agents" color="primary"></v-list-item>
+                <v-list-item ref="refAgentTab" prepend-icon="mdi-robot" title="Available Agents" value="agents" color="primary" @click="revealAgentsPage"></v-list-item>
                 <v-list-item ref="refFinetuneTab" prepend-icon="mdi-tune" title="Fine-tuning" value="finetune" color="primary"></v-list-item>
             </v-list>
 
@@ -70,6 +71,12 @@ onMounted(() => {
     currentPage.value = [ "knowbase" ]
     console.log(currentPage)
   }
+  else if (props.selectedPage == "agents")
+  {
+    const agentsBtn = ref("refAgentTab")
+    currentPage.value = [ "agents" ]
+    console.log(currentPage)
+  }
   
 })
 
@@ -88,6 +95,10 @@ function revealChatPage()
     router.push(`/chat`)
 }
 
+function revealAgentsPage()
+{
+    router.push(`/agents`)
+}
 
 
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { createWebHistory, createRouter } from "vue-router"
 import HomePage from "@/components/HomePage (Discarded)/HomePage.vue"
 import ChatPage from "@/components/ChatPage/ChatPage.vue"
@@ -59,3 +60,38 @@ const router = createRouter({
 });
 
 export default router;
+=======
+import { createWebHistory, createRouter } from "vue-router"
+import HomePage from "@/components/HomePage (Discarded)/HomePage.vue"
+import ChatPage from "@/components/ChatPage/ChatPage.vue"
+import KnowBase from "@/components/KnowbasePage/KnowBasePage.vue"
+
+
+const routes = [
+    {
+        path: "/",
+        name: "HomePage", 
+        component: HomePage,
+    },
+
+    {
+        path: "/chat",
+        name: "ChatPage", 
+        component: ChatPage,
+    },
+
+    {
+        path: "/knowbase",
+        name: "KnowBase", 
+        component: KnowBase,
+    },
+
+]
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+});
+
+export default router;
+>>>>>>> 73fe00a0d1ee4a311c8991434055d48344dadf01

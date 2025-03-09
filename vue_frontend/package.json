@@ -1,0 +1,33 @@
+{
+  "name": "vuetify-project",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mdi/font": "7.4.47",
+    "crypto-browserify": "^3.12.1",
+    "custom-vue-scrollbar": "^0.0.8",
+    "highlight.js": "^11.11.1",
+    "markdown-it": "^14.1.0",
+    "markdown-it-highlightjs": "^4.2.0",
+    "marked": "^15.0.7",
+    "roboto-fontface": "*",
+    "vue": "^3.4.31",
+    "vue-router": "^4.5.0",
+    "vuetify": "^3.6.14"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "sass": "1.77.8",
+    "sass-embedded": "^1.77.8",
+    "unplugin-fonts": "^1.1.1",
+    "unplugin-vue-components": "^0.27.2",
+    "vite": "^5.4.0",
+    "vite-plugin-vuetify": "^2.0.3"
+  }
+}

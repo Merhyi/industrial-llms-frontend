@@ -19,7 +19,7 @@
                 <v-list-item ref="refChatTab" prepend-icon="mdi-message-text" title="Chat Service" value="chat" color="primary" @click="revealChatPage"></v-list-item>
                 <v-list-item ref="refKnowbaseTab" prepend-icon="mdi-database" title="Knowledge Base" value="knowbase" color="primary" @click="revealKnowbasePage"></v-list-item>
                 <v-list-item ref="refAgentTab" prepend-icon="mdi-robot" title="Available Agents" value="agents" color="primary" @click="revealAgentsPage"></v-list-item>
-                <v-list-item ref="refFinetuneTab" prepend-icon="mdi-tune" title="Fine-tuning" value="finetune" color="primary"></v-list-item>
+                <v-list-item ref="refFinetuneTab" prepend-icon="mdi-tune" title="Fine-tuning" value="finetune" color="primary" @click="revealFinetunePage"></v-list-item>
             </v-list>
 
             <v-list style="position: fixed; bottom: 0" width="100%">
@@ -77,6 +77,12 @@ onMounted(() => {
     currentPage.value = [ "agents" ]
     console.log(currentPage)
   }
+  else if (props.selectedPage == "finetune")
+  {
+    const agentsBtn = ref("refAgentTab")
+    currentPage.value = [ "finetune" ]
+    console.log(currentPage)
+  }
   
 })
 
@@ -100,6 +106,9 @@ function revealAgentsPage()
     router.push(`/agents`)
 }
 
-
+function revealFinetunePage()
+{
+    router.push(`/finetune`)
+}
 
 </script>

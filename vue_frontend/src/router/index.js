@@ -8,6 +8,7 @@ import CreateItemPage from "@/components/KnowbasePage/CreateItemPage.vue"
 import KnowBaseConfigurationPage from "@/components/KnowbasePage/KnowBaseConfigurationPage.vue"
 import AgentsPage from "@/components/AgentsPage/AgentsPage.vue"
 import AgentsConfigurationPage from "@/components/AgentsPage/AgentsConfigurationPage.vue"
+import FinetunePage from "@/components/FinetunePage/FinetunePage.vue"
 
 
 const routes = [
@@ -51,6 +52,12 @@ const routes = [
         path: "/agents/configuration",
         name: "agents Configuration",
         component: AgentsConfigurationPage,
+    },
+
+    {
+        path: "/finetune",
+        name: "Fine-tuning",
+        component: FinetunePage,
     },
 
 ]

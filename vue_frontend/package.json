@@ -10,16 +10,13 @@
   },
   "dependencies": {
     "@mdi/font": "7.4.47",
-<<<<<<< HEAD
     "crypto-browserify": "^3.12.1",
     "custom-vue-scrollbar": "^0.0.8",
     "highlight.js": "^11.11.1",
     "markdown-it": "^14.1.0",
     "markdown-it-highlightjs": "^4.2.0",
     "marked": "^15.0.7",
-=======
     "custom-vue-scrollbar": "^0.0.8",
->>>>>>> 73fe00a0d1ee4a311c8991434055d48344dadf01
     "roboto-fontface": "*",
     "vue": "^3.4.31",
     "vue-router": "^4.5.0",

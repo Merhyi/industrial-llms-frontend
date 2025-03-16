@@ -2,10 +2,11 @@ import { createWebHistory, createRouter } from "vue-router"
 import HomePage from "@/components/HomePage (Discarded)/HomePage.vue"
 import ChatPage from "@/components/ChatPage/ChatPage.vue"
 import KnowBase from "@/components/KnowbasePage/KnowBasePage.vue"
-import CreateItemPage from "@/components/KnowbasePage/CreateItemPage.vue"
-import KnowBaseConfigurationPage from "@/components/KnowbasePage/KnowBaseConfigurationPage.vue"
 import AgentsPage from "@/components/AgentsPage/AgentsPage.vue"
+import KnowBaseConfigurationPage from "@/components/KnowbasePage/KnowBaseConfigurationPage.vue"
+import CreateItemPage from "@/components/KnowbasePage/CreateItemPage.vue"
 import AgentsConfigurationPage from "@/components/AgentsPage/AgentsConfigurationPage.vue"
+import FinetunePage from "@/components/FinetunePage/FinetunePage.vue"
 
 
 const routes = [
@@ -51,6 +52,12 @@ const routes = [
         component: AgentsConfigurationPage,
     },
 
+    {
+        path: "/finetune",
+        name: "Fine-tuning",
+        component: FinetunePage,
+    },
+
 ]
 
 const router = createRouter({
@@ -59,4 +66,3 @@ const router = createRouter({
 });
 
 export default router;
-
